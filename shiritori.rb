@@ -1,9 +1,6 @@
-modules = ['shiritori',
-           'network']
+require 'pry'
+require 'active_support/dependencies'
+ActiveSupport::Dependencies.autoload_paths << './src/'
 
-modules.each do |directory|
-  path = "./#{directory}"
-  Dir[File.expand_path(path, __FILE__) << '/*.rb'].each do |file|
-    require file
-  end
-end
+DATA_PATH = './data'
+Shiritori::Core.new(DATA_PATH).run

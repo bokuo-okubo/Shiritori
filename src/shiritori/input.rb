@@ -1,16 +1,16 @@
 module Shiritori
-  class CLI
-    class << self
-      def readline
+  module Input
+    class CLI
+      def self.readline
         status = true
         while status
           word = Readline.readline("> ", true)
           status = word.strip.empty?
         end
-        Shiritori::CLI.last(word)
+        self.last(word)
       end
 
-      def last(word)
+      def self.last(word)
         word.split('').last
       end
     end 
