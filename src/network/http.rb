@@ -10,11 +10,3 @@ module Network
     end
   end
 end
-
-
-
-# # post a message
-# req = Net::HTTP::Post.new("/api/v1/topics/#{topic_id}")
-# req['Authorization'] = "Bearer #{access_token}"
-# req.set_form_data({:message=>msg})
-# http.request(req)

@@ -8,13 +8,12 @@ module Shiritori
 
     def run
       last_char = Shiritori::Input::CLI.readline
-
-      @dictionary.get_word(last_char) # p method is temporary
+      @dictionary.get_word(last_char) 
     end
 
     def shiritori(word)
       last_char = Shiritori::Input::CLI.last(word)
-      @dictionary.get_word(last_char) # p method is temporary
+      @dictionary.get_word(last_char) 
     end
   end
 end
