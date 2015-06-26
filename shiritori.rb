@@ -29,10 +29,11 @@ post '/shiritori' do
   else
     logger.info hash = JSON.parse(body)
     ans = hash["post"]["message"]
+    account_id = hash["post"]["account"]["id"]
 
     msg = Shiritori::Core.new(DATA_PATH).shiritori(ans)
     topic_id = '14603'
     Network::Networking.post(topic_id, msg)
-    msg
+    { "message": msg, "replyTo": account_id }.to_json
   end
 end
