@@ -26,10 +26,9 @@ post '/shiritori' do
   if body == ''
     status 400
   else
-    # binding.pry
+    binding.pry
     # body.force_encoding('utf-8')
     hash = JSON.parse(body)
-    logger.info hash
 
     logger.info ans = hash[:post][:message]
 
