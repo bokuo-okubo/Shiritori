@@ -20,11 +20,12 @@ end
 
 post '/shiritori' do
   body = request.body.read
- 
+
   if body == ''
     status 400
   else
-    hash = body.to_json
+    logger.info body
+#    hash = body.to_json
 
     msg = Shiritori::Core.new(DATA_PATH).shiritori("ぴよぴよ")
     topic_id = '14603'
