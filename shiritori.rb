@@ -14,6 +14,10 @@ def running_local
   Network::Networking.post(topic_id, msg)
 end
 
+get '/' do
+  'hello sinatra'
+end
+
 post '/shiritori' do
   body = request.body.read
  
@@ -25,5 +29,6 @@ post '/shiritori' do
     msg = Shiritori::Core.new(DATA_PATH).shiritori("ぴよぴよ")
     topic_id = '14603'
     Network::Networking.post(topic_id, msg)
+    msg
   end
 end
