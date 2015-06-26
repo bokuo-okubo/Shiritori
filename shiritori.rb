@@ -1,5 +1,7 @@
+#encoding: utf-8
 require 'pry'
 require 'sinatra'
+require 'json'
 
 require 'active_support/dependencies'
 ActiveSupport::Dependencies.autoload_paths << './src/'
@@ -24,10 +26,12 @@ post '/shiritori' do
   if body == ''
     status 400
   else
-    logger.info body
-    puts
-    puts
-    logger.info hash = body[:post][:message]
+    # binding.pry
+    # body.force_encoding('utf-8')
+    hash = JSON.parse(body)
+    logger.info hash
+
+    logger.info ans = hash[:post][:message]
 
     msg = Shiritori::Core.new(DATA_PATH).shiritori("ぴよぴよ")
     topic_id = '14603'
