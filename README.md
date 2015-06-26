@@ -8,3 +8,8 @@ $ bundle install
 $ bundle exec shotgun -O shiritori.rb
 ```
 
+deproied to heroku.
+
+- endpoint
+
+[https://shiritoruby.herokuapp.com/](https://shiritoruby.herokuapp.com/
