@@ -25,7 +25,9 @@ post '/shiritori' do
     status 400
   else
     logger.info body
-    hash = body.to_json
+    puts
+    puts
+    logger.info hash = body[:post][:message]
 
     msg = Shiritori::Core.new(DATA_PATH).shiritori("ぴよぴよ")
     topic_id = '14603'
