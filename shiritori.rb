@@ -34,6 +34,6 @@ post '/shiritori' do
     msg = Shiritori::Core.new(DATA_PATH).shiritori(ans)
     topic_id = '14603'
     Network::Networking.post(topic_id, msg)
-    { "message": msg, "replyTo": account_id }.to_json
+    { "message" => msg, "replyTo" => account_id }.to_json
   end
 end
