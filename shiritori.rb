@@ -34,7 +34,7 @@ post '/shiritori' do
     msg_ary = Shiritori::Core.new(DATA_PATH).shiritori(ans)
     binding.pry
     topic_id = '14603'
-    # Network::Networking.post(topic_id, msg)
-    { "message" => msg_ary.shuffle.first, "replyTo" => account_id }.to_json
+    # Network::Networking.post(topic_id, msg) ## messaging protocol
+    { "message" => msg_ary.shuffle.first, "replyTo" => account_id }.to_json # HTTP response
   end
 end
