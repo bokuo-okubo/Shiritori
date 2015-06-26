@@ -11,5 +11,10 @@ module Shiritori
 
       @dictionary.get_word(last_char) # p method is temporary
     end
+
+    def shiritori(word)
+      last_char = Shiritori::Input::CLI.last(word)
+      @dictionary.get_word(last_char) # p method is temporary
+    end
   end
 end
